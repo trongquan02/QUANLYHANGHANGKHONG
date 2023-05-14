@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width= , initial-scale=1.0">
+    <title>Appleairlines</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" type='text/css' href="{{url_for('static', filename='css/styles.css')}}" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+
+</head>
+<body>
+<!-- header section starts -->
+    <header class="header">
+        <a href="{{url_for('home_page_login')}}" class="logo"> <img src="{{url_for('static', filename='img/logo.png')}}" alt="logo" style="width: 200px;"></a>
+        
+
+        <nav class="navbar">
+            <a href="{{url_for('home_page_login')}}">Trang chủ</a>
+            <a href="{{url_for('booking')}}">Đặt vé</a>
+            <a href="#dichvu">Dịch vụ</a>
+            <!-- <a href="#khampha">Khám Phá</a> -->
+            <a href="#tintuc">Tin tức</a>
+        </nav>
+    <!-- </div> -->
+
+        <div class="icons">
+            <ion-icon class="icon-search" name="search-outline" id = "search-btn"></ion-icon> 
+            <ion-icon class="icon-notifications" name="notifications-outline" id="notifications-btn"></ion-icon>
+            <ion-icon class="icon-ticket" name="ticket-outline" id="ticket-btn"></ion-icon>
+            <ion-icon class="icon-person" name="person-outline" id="person-btn"></ion-icon>
+            <ion-icon class="icon-menu" name="menu-outline" id = "menu-btn"></ion-icon>
+        </div>
+
+        <div class="search-from">
+            <div class="box">
+                <a style="width: 100%;" class='btn' href="{{url_for('check_available')}}">Xem chuyến bay có sẵn</a>  
+            </div>
+        </div>
+
+        <div class="notifications-from">
+            <div class="box">
+                <h3>Vé VNA1234 HN - HCM đã được mua</h3>
+                <div class="content">
+                    <span>Vé đã được mua vào lúc 00:00:00</span>
+                </div>
+            </div>
+
+            <div class="box">
+                <h3>Khuyến mãi</h3>
+                <div class="content">
+                    <span>Giảm 300K khi thanh toán bằng VNPay QR</span>
+                </div>
+            </div>
+
+            <div class="box">
+                <h3>Vé đang chờ thanh toán</h3>
+                <div class="content">
+                    <span>Đơn hàng sẽ hết hiệu lực trong 15 phút, hãy thanh toán để đặt vé</span>
+                </div>
+            </div>
+
+            <a>Đánh dấu tất cả đã </a> 
+        </div>
+
+        <div class="ticket-card">
+
+            <div class="box">   
+                <a style="width: 100%;" class='btn' href="{{url_for('booked')}}">Kiểm tra vé mà bạn đã đặt</a>
+    
+            </div>
+
+        </div>
+
+        <form action="#" class="login-from" style="width: 200px;">
+            <!-- <h3>Đăng nhập</h3> -->
+            <!-- <ion-icon name="person-circle-outline"></ion-icon> -->
+            <!-- <input type="text" placeholder="Tên đăng nhập" name="tenDangNhap" class="box"> -->
+            <!-- <ion-icon name="key-outline"></ion-icon> -->
+            <!-- <input type="password" placeholder="Mật khẩu" name = "matKhau" class="box"> -->
+            <a class='btn' href="{{url_for('user_info')}}">Thông tin cá nhân</a>
+            <br>
+            <a class='btn' href="{{url_for('logout')}}">Đăng xuất</a>
+
+        </form>
+
+    </header>
+<!-- header end -->
+
+<!-- section start -->
+    {% block section %} {% endblock section %}
+    
+<!-- section end -->
+
+<!-- Đặt vé start -->
+    {% block datve %} {% endblock datve %}
+
+<!-- Đặt vé end -->
+
+
+<!-- dich vu start -->
+
+    {% block dichvu %} {% endblock dichvu %}
+
+<!-- dich vu end -->
+
+<!-- tin tuc start -->
+    {% block tintuc %} {% endblock tintuc %}
+<!-- tin tuc end -->
+
+
+<!-- dang ky start -->
+    {% block dangky %} {% endblock dangky %}
+
+<!-- dang ky end -->
+
+<!-- dang ky start -->
+{% block info %} {% endblock info %}
+
+<!-- dang ky end -->
+
+
+<!-- footer start-->
+    <section class="footer">
+        <div class="box-container">
+            <div class="box">
+                <h3><img src="{{url_for('static', filename='img/logo.png')}}" alt="logo" style="width: 200px;"></h3>
+                <p>Vietnam Airlines tự hào là Hãng hàng không quốc tế 4 sao</p>
+                <div class="info">
+                    <a href="#"> Giới thiệu công ty </a>
+                    <a href="#"> Đội bay </a>
+                    <a href="#"> Đối tác </a>
+                    <a href="#"> Thông tin truyền thông </a>
+                    <a href="#"> Trách nhiệm xã hội </a>
+                    <a href="#"> Cơ hội việc làm </a>
+                </div>
+            </div>
+
+            <div class="box">
+                    <h3>Pháp Lý</h3>
+                    <a href="#"> Các điều kiện & Điều khoản </a>
+                    <a href="#"> Điều lệ vận chuyển </a>
+                    <a href="#"> Điều kiện sử dụng Cookies </a>
+                    <a href="#"> Bảo mật thông tin </a>
+                    <a href="#"> Quy chế hoạt động sàn TMĐT </a>
+            </div>
+            
+            <div class="box">
+                <h3>Hỗ trợ</h3>
+                <a href="#"> Góp ý </a>
+                <a href="#"> Trung tâm trợ giúp </a>
+                <a href="#"> Chính sách bảo vệ </a>
+            </div>
+
+            <!-- <div class="box">
+                <h3>Vận tải hàng hóa</h3>
+                <a href="#"> Trang web hàng hóa </a>
+            </div> -->
+
+            <div class="share">
+                <!-- <h3>Kết nối với chúng tôi</h3> -->
+                <a href="#" class="bi bi-facebook"></a>
+                <a href="#" class="bi bi-twitter"></a>
+                <a href="#" class="bi bi-google"></a>
+                <a href="#" class="bi bi-tiktok"></a>
+                <a href="#" class="bi bi-youtube"></a>
+                <div class="chungchi">
+                    <img src="{{url_for('static', filename='img/pasted image 0.png')}}" alt="">
+                </div>
+            </div>
+
+            </div>
+        </div>
+    </section>
+<!-- footer end -->
+
+    <script src="{{url_for('static', filename='js/script.js')}}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+</body>
+</html>

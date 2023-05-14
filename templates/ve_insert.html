@@ -1,0 +1,31 @@
+{% extends 'admin_base.html' %}
+{% block signup_active %}active{% endblock %} 
+
+{% block content %}
+<div class="jumbotron justify-content-center mx-auto mt-5 signup" style="width: 400px;">
+  {% for message in get_flashed_messages() %}
+        {% if message == 'Nhập thành công' %}
+        <div style="color: #34d637; font-size: 18px;" class="flash alert
+            alert-success justify-content-center mt-4 w-50
+            mx-auto">{{ message }}</div>
+        {% else %}
+        <div style="color: #df3535; font-size: 18px;" class="flash alert
+            alert-danger justify-content-center mt-4 w-50
+            mx-auto">{{ message }}</div>
+        {% endif %}
+        {% endfor %}
+  <form action="/ve_insert" method="post">
+    <div class="form-group">
+            <label for="exampleInputLocCode" class="mt-4">Mã vé</label>
+            <input type="text" name="ma_ve" class="form-control" id="exampleInputLocCode" placeholder="MA vé" required>
+            
+            <label for="exampleInputCity" class="mt-4">Giá vé</label>
+            <input type="text" name="gia_ve" class="form-control" id="exampleInputCity" placeholder="Giá vé" required>
+
+            <label for="exampleInputCity" class="mt-4">Mã chuyến bay</label>
+            <input type="text" name="ma_chuyen_bay" class="form-control" id="exampleInputCity" placeholder="Mã chuyến bay" required>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Thêm</button>
+    </form>
+</div>
+{% endblock %}

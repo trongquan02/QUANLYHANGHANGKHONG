@@ -1,0 +1,71 @@
+{% extends 'admin_base.html' %}
+{% block profile_active %}active{% endblock %}
+
+{% block content %}
+
+<div class="container" style="background-color: 	rgba(0,0,0,0.005);">
+    <br><br><br>
+    <div class="row" >
+        <div class="col-md-4">
+            <div class="card" style="width: 18rem;">
+              <div class="card-body">
+                <h5 class="card-title">Sân bay</h5>
+                <a href="/airport_view" class="btn btn-primary">Hiển Thị</a>
+                <a href="/airport_insert" class="btn btn-primary">Thêm</a>
+              </div>
+            </div>
+        </div>
+        <br><br><br>
+        <br><br><br>
+        <div class="col-md-4">
+            <div class="card" style="width: 18rem;">
+
+              <div class="card-body">
+                <h5 class="card-title" >Hãng hàng không</h5>
+                <a href="/airline_view" class="btn btn-primary">Hiển Thị</a>
+                <a href="/airline_insert" class="btn btn-primary">Thêm</a>
+              </div>
+            </div>
+        </div>
+        <br><br><br>
+        <br><br><br>
+        <div class="col-md-4">
+            <div class="card" style="width: 18rem;">
+
+              <div class="card-body">
+                <h5 class="card-title">Chuyến bay</h5>
+                <a href="/flight_view" class="btn btn-primary">Hiển Thị</a>
+                <a href="/flight_insert" class="btn btn-primary">Thêm</a>
+              </div>
+            </div>
+        </div>
+        <br><br><br>
+        <br><br><br>
+        <div class="col-md-4">
+          <div class="card" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">Khách hàng</h5>
+              <a href="/users_view" class="btn btn-primary">Hiển Thị</a>
+              <a href="/register" class="btn btn-primary">Thêm</a>
+            </div>
+          </div>
+      </div>
+      <br><br><br>
+      <br><br><br>
+
+      <br><br><br>
+      <br><br><br>
+      <!-- <div class="col-md-4">
+        <div class="card" style="width: 18rem;">
+
+          <div class="card-body">
+            <h5 class="card-title">Vé</h5>
+            <a href="/ve_view" class="btn btn-primary">Hiển thị</a>
+            <a href="/ve_insert" class="btn btn-primary">Thêm</a>
+
+          </div>
+        </div>
+      </div> -->
+    </div>
+</div>
+{% endblock %}

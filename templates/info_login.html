@@ -1,0 +1,288 @@
+{% extends "layout_login.html" %}
+
+{% block info %}
+
+<!-- <link rel="stylesheet" type='text/css' href="{{url_for('static',
+    filename='css/register_style.css')}}" rel="stylesheet">
+
+<style>
+
+/* * {
+    background-color: aliceblue;
+} */
+
+h1 {
+    text-align: center;
+    color: rgba(0, 0, 0, 0.676);
+    padding-top: 15px;
+}
+
+
+.signup-box {
+    /* text-align: center; */
+    position: relative;
+    top: 180px;
+    /* padding-bottom: 100px; */
+    
+    text-align: center;
+
+    width: 760px;
+    height: 720px;
+    /* padding-bottom: 300px; */
+
+    
+}
+
+.signup-box {
+    /* margin: auto; */
+    background-color: rgba(255, 255, 255, 0.774);
+    border-radius: 10px;
+}
+-->
+
+<style>
+
+.for-sign-in-background {
+    width: 100vw;
+    height: 150vh;
+    background-size: 100%;
+    /* background-size: 2000px 2000px; */
+    /* height: 1000px; */
+    background-repeat: no-repeat;
+    background-image: url('https://www.vietnamairlines.com/~/media/Images/VNANew/FareDeal/default-bg.jpg?mw=1300');
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+.container{
+  position: relative;
+  top: 400px;  
+  max-width: 700px;
+  width: 100%;
+  background-color: #fff;
+  padding: 25px 30px;
+  border-radius: 5px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+}
+.container .title{
+  font-size: 25px;
+  font-weight: 500;
+  position: relative;
+}
+.container .title::before{
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 30px;
+  border-radius: 5px;
+  background: linear-gradient(135deg, #71b7e6, #9b59b6);
+}
+.content form .user-details{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 20px 0 12px 0;
+}
+form .user-details .input-box{
+  margin-bottom: 15px;
+  width: calc(100% / 2 - 20px);
+}
+form .input-box span.details{
+  display: block;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+.user-details .input-box input{
+  height: 45px;
+  width: 100%;
+  outline: none;
+  font-size: 16px;
+  border-radius: 5px;
+  padding-left: 15px;
+  border: 1px solid #ccc;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
+}
+.user-details .input-box input:focus,
+.user-details .input-box input:valid{
+  border-color: #9b59b6;
+}
+ form .gender-details .gender-title{
+  font-size: 20px;
+  font-weight: 500;
+ }
+ form .category{
+   display: flex;
+   width: 80%;
+   margin: 14px 0 ;
+   justify-content: space-between;
+ }
+ form .category label{
+   display: flex;
+   align-items: center;
+   cursor: pointer;
+ }
+ form .category label .dot{
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
+  margin-right: 10px;
+  background: #d9d9d9;
+  border: 5px solid transparent;
+  transition: all 0.3s ease;
+}
+ #dot-1:checked ~ .category label .one,
+ #dot-2:checked ~ .category label .two,
+ #dot-3:checked ~ .category label .three{
+   background: #9b59b6;
+   border-color: #d9d9d9;
+ }
+ form input[type="radio"]{
+   display: none;
+ }
+ form .button{
+   height: 45px;
+   margin: 35px 0
+ }
+ form .button input{
+   height: 100%;
+   width: 100%;
+   border-radius: 5px;
+   border: none;
+   color: #fff;
+   font-size: 18px;
+   font-weight: 500;
+   letter-spacing: 1px;
+   cursor: pointer;
+   transition: all 0.3s ease;
+   background: linear-gradient(135deg, #71b7e6, #9b59b6);
+ }
+ form .button input:hover{
+  /* transform: scale(0.99); */
+  background: linear-gradient(-135deg, #71b7e6, #9b59b6);
+  }
+ @media(max-width: 784px){
+  .for-sign-in-background {
+    background-size: 400%;
+  }
+
+    .container{
+      max-width: 90%;
+      }
+
+
+form .user-details .input-box{
+    margin-bottom: 15px;
+    width: 100%;
+  }
+  form .category{
+    width: 100%;
+  }
+  .content form .user-details{
+    max-height: 300px;
+    overflow-y: scroll;
+  }
+  .user-details::-webkit-scrollbar{
+    width: 5px;
+  }
+  }
+  @media(max-width: 459px){
+  .container .content .category{
+    flex-direction: column;
+  }
+}
+
+
+</style>
+
+
+<!--
+.form-signup-num1 {
+    position: relative;
+    left:20px
+    /* left: 360px;
+    bottom: 489px */
+}
+
+
+.form-signup-num2 {
+    position: relative;
+    left: 400px;
+    bottom: 435px
+}
+
+.form-signup-num3 {
+    position: relative;
+    left: 200px;
+    bottom: 420px
+}
+
+.form-signup-num3-but:hover {
+    background-color: rgb(78, 200, 118);
+}
+
+.form-signup-num4 {
+    position: relative;
+    left: 209px;
+    bottom: 420px
+}
+
+
+
+</style>
+-->
+
+<div class="for-sign-in-background">
+    <div class="container">
+
+        <div class="title">Thông tin cá nhân</div>
+        <div class="content">
+            <form action="#" method="post">
+                <div class="user-details">
+                    <div class="input-box">
+                        <span style='font-size: 20px;' class="details">Họ và tên:</span>
+                        <span style='font-size: 20px; color: #206221;' class="details">{{fullName}}</span>
+
+                        
+                    </div>
+                    <div class="input-box">
+                        <span style='font-size: 20px;' class="details">Giới tính:</span>
+                        <span style='font-size: 20px; color: #206221;' class="details">{{gender}}</span>
+
+                    </div>
+                    <div class="input-box">
+                        <span style='font-size: 20px;' class="details">Ngày sinh:</span>
+                        <span style='font-size: 20px; color: #206221;' class="details">{{birth}}</span>
+
+                    </div>
+                    <div class="input-box">
+                        <span style='font-size: 20px;' class="details">Số CMND/CCCD:</span>
+                        <span style='font-size: 20px; color: #206221;' class="details">{{id_num}}</span>
+
+                    </div>
+                    <div class="input-box">
+                        <span style='font-size: 20px;' class="details">Email:</span>
+                        <span style='font-size: 20px; color: #206221;' class="details">{{email}}</span>
+
+                    </div>
+                    <div class="input-box">
+                        <span style='font-size: 20px;' class="details">Số điện thoại:</span>
+                        <span style='font-size: 20px; color: #206221;' class="details">{{phoneNum}}</span>
+
+                    </div>
+                    
+                </div>
+        
+                <div class="button">
+                    <input type="submit" value="Bạn có muốn thay đổi mật khẩu?">
+                </div>
+
+
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock info %}

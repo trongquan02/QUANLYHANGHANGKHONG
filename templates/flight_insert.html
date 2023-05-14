@@ -1,0 +1,49 @@
+{% extends 'admin_base.html' %}
+{% block signup_active %}active{% endblock %} 
+
+{% block content %}
+<div class="jumbotron justify-content-center mx-auto mt-5 signup" style="width: 600px;">
+    {% for message in get_flashed_messages() %}
+        {% if message == 'Nhập thành công' %}
+        <div style="color: #34d637; font-size: 18px;" class="flash alert
+            alert-success justify-content-center mt-4 w-50
+            mx-auto">{{ message }}</div>
+        {% else %}
+        <div style="color: #df3535; font-size: 18px;" class="flash alert
+            alert-danger justify-content-center mt-4 w-50
+            mx-auto">{{ message }}</div>
+        {% endif %}
+        {% endfor %}
+    <form action="/flight_insert" method="post">
+      <div class="form-group flex-container" style="width: 100%;">
+        <div style="width: 50%;">
+            <label for="exampleInputFlightID" class="mt-4">Mã CB</label>
+            <input type="text" name="input_flightid" class="form-control" id="exampleInputFlightID" placeholder="Mã CB" required>
+            
+            <label for="exampleInputAirlineID1" class="mt-4">TG ĐI</label>
+            <input type="date" name="input_airlineid1" class="form-control" id="exampleInputAirlineID1" placeholder="TG ĐI" required>
+            
+            <label for="exampleInputArrival" class="mt-4">TG Đến</label>
+            <input type="date" name="input_arrival" class="form-control" id="exampleInputArrival" placeholder="TG Đến" required>
+
+            <label for="exampleInputDeparture" class="mt-4">Điểm ĐI</label>
+            <input type="text" name="input_departure" class="form-control" id="exampleInputDeparture" placeholder="Điểm ĐI" required>
+        </div>
+        <div style="width: 50%;">
+            <label for="exampleInputSource" class="mt-4">Điểm Đến</label>
+            <input type="text" name="input_source" class="form-control" id="exampleInputSource" placeholder="Điểm Đến" required>
+        
+            <label for="exampleInputDestination" class="mt-4">Số Ghế Trống</label>
+            <input type="text" name="input_destination" class="form-control" id="exampleInputDestination" placeholder="Số Ghế Trống" required>
+        
+            <label for="exampleInputRoute" class="mt-4">ID Hãng Bay</label>
+            <input type="text" name="input_route" class="form-control" id="exampleInputRoute" placeholder="ID Hãng Bay" required>
+
+            <label for="exampleInputRoute" class="mt-4">Giá vé</label>
+            <input type="text" name="input_cost" class="form-control" id="exampleInputRoute" placeholder="Giá vé (VND)" required>
+        </div>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Thêm</button>
+    </form>
+</div>
+{% endblock %}

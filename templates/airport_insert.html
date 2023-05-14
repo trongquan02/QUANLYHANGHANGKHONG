@@ -1,0 +1,28 @@
+{% extends 'admin_base.html' %}
+{% block signup_active %}active{% endblock %} 
+
+{% block content %}
+<div class="jumbotron justify-content-center mx-auto mt-5 signup" style="width: 400px;">
+  {% for message in get_flashed_messages() %}
+        {% if message == 'Nhập thành công' %}
+        <div style="color: #34d637; font-size: 18px;" class="flash alert
+            alert-success justify-content-center mt-4 w-50
+            mx-auto">{{ message }}</div>
+        {% else %}
+        <div style="color: #df3535; font-size: 18px;" class="flash alert
+            alert-danger justify-content-center mt-4 w-50
+            mx-auto">{{ message }}</div>
+        {% endif %}
+        {% endfor %}
+  <form action="/airport_insert" method="post">
+    <div class="form-group">
+            <label for="exampleInputLocCode" class="mt-4">MA DC</label>
+            <input type="text" name="ma_dc" class="form-control" id="exampleInputLocCode" placeholder="MA DC" required>
+            
+            <label for="exampleInputCity" class="mt-4">Thành Phố</label>
+            <input type="text" name="thanh_pho" class="form-control" id="exampleInputCity" placeholder="Thành Phố" required>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Thêm</button>
+    </form>
+</div>
+{% endblock %}

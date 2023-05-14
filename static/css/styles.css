@@ -1,0 +1,652 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@100;300;400;500;600&display=swap');
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css");
+:root{
+    --white: #ffffff;
+    --black: #000000;
+    --gray-space: #e2e2e2;
+    --blue-sky: rgb(84, 158, 187);
+    --orange: rgba(255, 162, 0, 0.804);
+    --box-shadow:0 .5rem 1.5rem rgba(169, 164, 164, 0.1);
+    --border:.2rem solid rgba(0,0,0,.1);
+    --outline:.1rem solid rgba(0,0,0,.1);
+    --outline-hover:.2rem solid var(--blue-sky);
+}
+
+* {
+    font-family: 'Nunito', sans-serif;
+    margin: 0; padding: 0;
+    box-sizing: border-box;
+    outline: none; border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: all .1s linear;
+}
+
+html{
+    font-size: 52.5%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scroll-padding-top: 7rem;
+}
+
+body{
+    background: #eeeeee;
+}
+
+section{
+    padding:2rem 9%;
+}
+
+.btn{
+    margin-top: 1rem;
+    display: inline-block;
+    padding: .8rem 3rem;
+    font-size: 1.7rem;
+    border-radius: .5rem;
+    border:.5rem solid var(--black);
+    color: var(--black);
+    cursor: pointer;
+    background-color: var(--orange);
+}
+
+.btn:hover{
+    background:var(--orange);
+    color: #ffffff;
+}
+
+#menu-btn{
+    display: none;
+}
+
+.header{
+    position: fixed;
+    top:0; left:0; right: 0;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 9%;
+    background: #ffffff;
+    box-shadow: var(--box-shadow);
+}
+
+.header .logo img{
+    font-size: 0.5rem;
+    font-weight: 100;
+    box-shadow: #ffffff;
+    size: 10%;
+}
+
+.header .navbar a{
+
+    font-size: 2.0rem;
+    margin: 0rem 1rem; 
+    
+    color: var(--black);
+    text-decoration: none;
+     
+}
+
+.header .navbar a:hover{
+    color:var(--blue-sky);
+}
+
+.header .icons ion-icon{
+    height: 2.5rem;
+    width: 2.5rem;
+    line-height: 4.5rem;
+    border-radius: 4.5rem;
+    background: #ffffff;
+    color:var(--black);
+    font-size: 2rem;
+    margin-right: 3rem;
+    text-align: center;
+}
+
+.header .icons ion-icon:hover{
+    color: var(--blue-sky);
+    height: 2.55rem;
+    width: 2.55rem; 
+    /* background-color: #549ebb; */
+}
+
+.header .search-from{
+    padding: 1rem;
+    position: absolute;
+    top:110%; right: -110%;
+    width: 20rem;
+    height: 8rem;
+    background: #ffffff;
+    border-radius: .5rem;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    box-shadow: var(--box-shadow);
+}
+
+.header .search-from.active{
+    right:22rem;
+    transition: 0.4s;
+}
+
+.header .search-from input{
+    height: 100%;
+    width: 100%;
+    background: none;
+    text-transform: none;
+    font-size: 1.6rem;
+    color:var(--black);
+    padding:0 1.rem;
+    margin-left: 2rem;
+}
+
+.header .search-from label{
+    font-size: 1.2rem;
+    padding-right: 1.5rem;
+    color: var(--black);
+    cursor: pointer;
+}
+
+.header .search-from label:hover{
+    color: var(--blue-sky);
+}
+
+
+.header .notifications-from{
+    position: absolute;
+    top: 110%; right: -110rem;
+    padding: 1rem;
+    border-radius: .5rem;
+    box-shadow: var(--box-shadow);
+    width: 40rem;
+    background: #ffffff;
+}
+
+.header .notifications-from.active{
+    right: 2rem;
+    transition: .4s linear;
+}
+
+
+.header .ticket-card{
+    position: absolute;
+    top: 110%; right: -110rem;
+    padding: 1rem;
+    border-radius: .5rem;
+    box-shadow: var(--box-shadow);
+    width: 40rem;
+    background: #ffffff;
+}
+
+.header .ticket-card.active{
+    right: 2rem;
+    transition: .4s linear;
+}
+
+.header .ticket-card .box{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    position: relative;
+    margin: 1rem 0;
+}
+
+.header .ticket-card .box:hover{
+    background-color: var(--gray-space);
+    border-radius: 0.5rem;
+}
+
+.header .ticket-card .box .content{
+    margin-left: 2rem;
+    font-size: 2rem;
+}
+
+.header .ticket-card .box .content ion-icon{
+    position: static;
+    top: -4rem;
+    cursor: pointer;
+    color: var(--blue-sky);
+    align-content: center;
+    transform: translateY(10%);
+}
+
+.header .ticket-card .box .content span{
+    font-size: 2rem;
+}
+
+.header .ticket-card .box h3{
+    color: var(--black);
+    font-size: 2.5rem;
+    padding-bottom: 1rem;
+}
+
+.header .login-from{
+    position: absolute;
+    top:110%; right: -110%;
+    width: 30rem;
+    box-shadow: var(--box-shadow);
+    padding: 2rem;
+    border-radius: .5rem;
+    background: #ffffff;
+    text-align: center;
+}
+
+.header .login-from.active{
+    right: 2rem;
+    transition: .4s linear;
+}
+
+.header .login-from h3{
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    color: var(--black);
+}
+
+.header .login-from .box{
+    margin: .7rem 0;
+    background: var(--gray-space);
+    border-radius: .5rem;
+    padding: 1rem;
+    font-size: 1.6rem;
+    color:var(--black);
+    text-transform: none;
+
+}
+
+.header .login-from p a{
+    color: var(--orange);
+    text-decoration: underline;
+}
+
+.home{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--gray-space);
+    padding-top: 10rem;
+    padding-bottom: 10rem;
+}
+
+.home .slider{
+    scale: 150%;
+
+}
+
+.home .slider .container .myCarousel .item.active{
+    height: 100%;
+}
+
+.home .slider .container .myCarousel .item.active img{
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+
+.home .slider .container .myCarousel .item.active div{
+    font-size: 15px;
+}
+
+
+
+.dichvu .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap: 1.5rem;
+}
+
+.dichvu .box-container .box{
+    padding:3rem 2rem;
+    background: #ffffff;
+    outline: var(--outline);
+    outline-offset: -1rem;
+    text-align: center;
+    box-shadow: var(--box-shadow);
+}
+
+.dichvu .box-container .box:hover{
+    outline: var(--outline-hover);
+    outline-offset: 0rem;
+}
+
+.dichvu .box-container .box img{
+    margin: 2rem 0;
+    height: 20rem; 
+}
+
+.dichvu .box-container .box h3{
+    font-size: 2.5rem;
+    line-height:  1.8;
+    color: var(--black);
+}
+
+.dichvu .box-container .box p{
+    font-size: 1.5rem;
+    line-height:  1.8;
+    color: var(--light-color);
+    padding: 1rem 0;
+}
+
+.datve {
+    /* position: relative; */
+
+}
+
+.search-content-items {
+    justify-content: space-between;
+    background-color: var(--gray-space);
+    padding: 2rem;
+    border-radius: 0.5rem;
+    /* height: 50px; */
+}
+
+.search-content-item {
+    height: 50px;
+    /* background-color: #ffffff; */
+    width: 100%;
+    display: inline;
+    align-items: center;
+    border-radius: 0.5rem;
+    position: relative;
+}
+
+.search-content-item input{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: var(--border);
+    border-radius: 0.5rem;
+    outline: var(--outline);
+    padding-left: 36px;
+}
+
+.search-content-item i{
+    position: absolute;
+    color: var(--blue-sky);
+    margin-right: 12px;
+    top: 14px;
+    left: 19px;
+    z-index: 1;
+}
+
+.search-content-item:last-child{
+    width: 130px;
+    height: 50px;
+}
+
+.search-content-item:last-child .btn{
+    margin-top: 1px;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    padding-top: 14px;
+}
+
+.wraper .search-content-items.row .search-content-item .autobox {
+    position: absolute;
+    top: 100%;
+    background-color: #ffffff;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    box-shadow: var(--box-shadow);
+    overflow-y: auto;
+    z-index: 2;
+}
+
+.autobox li{
+    list-style: none;
+    padding: 6px 0 6px 36px;
+    cursor: pointer;
+    display: none;
+}
+
+.autobox li:hover{
+    color: var(--blue-sky);
+}
+
+.autobox.active li{
+    display: block;
+}
+
+
+.footer{
+    background-color: #0685aa;
+    background-position: center bottom;
+    clear: both;
+    padding-bottom: 20px;
+    overflow: hidden;
+    
+    /* background: var(--blue-sky); */
+}
+
+.footer .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    gap:1.5rem;
+}
+
+.footer .box-container .box h3{
+    font-size: 2.rem;
+    color: var(--orange);
+    padding: 1rem 0;
+}
+
+.footer .box-container .box a{
+    display: block;
+    font-size: 1.5rem;
+    color: #ffffff;
+    padding: .5rem 0;
+}
+
+.footer .box-container .box a:hover{
+    color: var(--orange);
+    text-decoration: none;
+}
+
+.footer .box-container .share {
+    margin-top: 10rem;
+}
+
+.footer .box-container .share a{
+    font-size: 2rem;
+    margin: 0rem 1rem; 
+    opacity: 70%;
+    color: var(--gray-space);
+    text-decoration: none;
+}
+
+.footer .box-container .share a:hover{
+    opacity: 100%;
+}
+
+.footer .box-container .share .chungchi{
+    scale: 40%;
+    margin-right: 30rem;
+    opacity: 50%;
+}
+
+.footer .box-container .share .chungchi:hover{
+    opacity: 100%;
+}
+
+
+
+.tintuc .tintuc-slider{
+    padding:1rem;
+    margin-right: 2rem; 
+}
+
+.tintuc .tintuc-slider:first-child{
+    margin-bottom: 2rem;
+}
+
+.tintuc .tintuc-slider .box{
+    background: #ffffff;
+    border-radius: .5rem;
+    text-align: center;
+    padding: 3rem 2rem;
+    outline-offset: -1rem;
+    outline: var(--outline);
+    box-shadow: var(--box-shadow);
+    transition: .2s linear;
+    width: 50rem;
+}
+
+.tintuc .tintuc-slider .box:hover{
+    outline: var(--outline-hover);
+    outline-offset: 0rem;
+}
+
+.tintuc .tintuc-slider .box img{
+    /* position: relative; */
+    margin: 2rem 0;
+    height: 20rem;
+    width: 20rem;
+    /* border-radius: 50%;  */
+}
+
+.tintuc .tintuc-slider .box p{
+    padding: 1rem 0;
+    line-height: 1.8rem;
+    color: var(--black);
+    font-size: 1.5rem;
+}
+
+.tintuc .tintuc-slider .box h3{
+    padding-bottom: .5rem;
+    color: var(--black);
+    font-size: 2.2rem;
+}
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* media */
+
+@media (max-width:1205px){
+    html{
+        font-size: 50%;
+    }
+
+    .header{
+        padding: 2rem;
+    }
+}
+
+@media (max-width:970px){
+    html{
+        font-size: 45%;
+    }
+
+    .header{
+        padding: 1rem;
+    }
+
+    section{
+        padding:2rem;
+    }
+}
+
+@media (max-width:768px){
+
+    #menu-btn{
+        display: inline-block;
+    }
+
+    .header .search-from{
+        width: 90%;
+    }
+
+    .header .navbar{
+        position: absolute;
+        top:110%; right: -110%;
+        width: 20rem; 
+        box-shadow: var(--box-shadow);
+        border-radius: .5rem;
+        background: #ffffff;
+        nav-right:1rem ;
+    }
+
+    .header .navbar.active{
+        right: 2rem;
+        transition: .4s linear;
+    }
+
+    .header .navbar a{
+        font-size: 2rem;
+        margin: 2rem 5rem;
+        display: block;
+        border-left: 2rem;
+    }
+
+    .home{
+        padding-top: -50rem;
+        padding-bottom: -50rem;
+    }
+
+    .search-content-item {
+        height: 50px;
+        /* background-color: #ffffff; */
+        width: 100%;
+        display: block;
+    }
+
+    .search-content-item:last-child{
+        width: 100%;
+        height: 50px;
+    }
+
+}
+
+@media (max-width:638px){
+    /* .home{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--gray-space);
+        padding-top: 5rem;
+        padding-bottom: 5rem;
+    }
+    
+    
+    .home .slider .container .myCarousel .item.active{
+        height: 100%;
+    }
+    
+    .home .slider .container .myCarousel .item.active img{
+        width: 100%;
+        height: 100%;
+        object-fit: fill;
+    }
+
+    .home .slider .container .myCarousel .item.active div{
+        font-size: 10px;
+    } */
+
+}
+
+
+
+
+
+
+

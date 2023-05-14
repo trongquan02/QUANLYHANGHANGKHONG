@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login</title>
+    <link rel="stylesheet" type="text/css" href="../static/css/admin_login.css">
+    </head>
+<body>
+    <div class="login-form">
+      <form action="/loginadmin" method="post">
+          <h1>Đăng nhập quản trị viên</h1>
+          <div class="content">
+            <div class="input-field">
+              <input type="text" placeholder="Tên đăng nhập" name="inputEmail" autocomplete="nope" required>
+              {% if message_email %}
+                <span style="color: red">{{ message_email }}</span>
+              {% endif %}
+            </div>
+            <div class="input-field">
+              <input type="password" placeholder="Mật Khẩu" name="pass" autocomplete="new-password" required>
+              {% if message_pass %}
+                <span style="color: rgb(255, 0, 0)" >{{ message_pass }}</span>
+              {% endif %}
+              <br>
+              <br>
+          <div class="action">
+            <button>Đăng nhập</button>
+          </div>
+        </form>
+      </div>
+</body>
+</html>

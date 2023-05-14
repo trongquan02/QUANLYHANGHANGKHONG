@@ -1,0 +1,33 @@
+{% extends 'admin_base.html' %}
+{% block signup_active %}active{% endblock %} 
+
+{% block content %}
+<div class="jumbotron justify-content-center mx-auto mt-5 signup" style="width: 400px;">
+  <form action="" method="post">
+      <div class="form-group flex-container">
+        <div>
+            <label for="exampleInputAirlineId" class="mt-4">Tên Đăng nhập</label>
+            <input type="text" name="ten_dang_nhap" class="form-control" id="a" placeholder="Tên Đăng nhập">
+            <label for="exampleInputAirlineName" class="mt-4">Mật khẩu</label>
+            <input type="text" name="mat_khau" class="form-control" id="b" placeholder="Mật khẩu">
+            <label for="exampleInputAirlineName" class="mt-4">Họ tên</label>
+            <input type="text" name="ho_ten" class="form-control" id="b" placeholder="Họ tên">
+            <label for="exampleInputAirlineName" class="mt-4">Giới tính</label>
+            <input type="text" name="gioi_tinh" class="form-control" id="b" placeholder="Giới tính">
+        </div>
+        <div>
+            <label for="exampleInputAirlineName" class="mt-4">Ngày sinh</label>
+            <input type="text" name="ngay_sinh" class="form-control" id="b" placeholder="Ngày sinh">
+        
+            <label for="exampleInputAirlineName" class="mt-4">Email</label>
+            <input type="text" name="email" class="form-control" id="b" placeholder="Email">
+            <label for="exampleInputAirlineName" class="mt-4">Số điện thoại</label>
+            <input type="text" name="so_dien_thoai" class="form-control" id="b" placeholder="Số điện thoại">
+            <label for="exampleInputAirlineName" class="mt-4">Số chứng minh</label>
+            <input type="text" name="so_chung_minh" class="form-control" id="b" placeholder="Số chứng minh">
+        </div>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Insert</button>
+    </form>
+</div>
+{% endblock %}

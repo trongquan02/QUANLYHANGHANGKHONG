@@ -1,0 +1,38 @@
+{% extends 'admin_base.html' %}
+{% block profile_active %}active{% endblock %}
+
+{% block content %}
+
+<form action="" method="post">
+    <div class="jumbotron justify-content-center mx-auto mt-5 signup">
+        {% if result %}
+        
+            <table id="users" class="table table-bordered">
+                <tr class="table-info">
+                    <th>Mã CB</th>
+                    <th>TG ĐI</th>
+                    <th>TG Đến</th>
+                    <th>Điểm ĐI</th>
+                    <th>Điểm Đến</th>
+                    <th>Số Ghế Trống</th>
+                    <th>ID Hãng Bay</th>
+                </tr>
+                {% for row in result %}
+                <tr class="table-info">
+                    <td> {{ row[0] }}</td>
+                    <td> {{ row[1] }}</td>
+                    <td> {{ row[2] }}</td>
+                    <td> {{ row[3] }}</td>
+                    <td> {{ row[4] }}</td>
+                    <td> {{ row[5] }}</td>
+                    <td> {{ row[6] }}</td>
+                </tr>
+                {% endfor %}
+                
+            </table>
+        
+        {% endif %}
+    </div>
+    </form>
+{% endblock %}
+               
